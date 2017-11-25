@@ -33,7 +33,6 @@ class Login_View: UIViewController
     var userload = User_Model()
     var index: Int?
     
-    
     // Do any additional setup after loading the view, typically from a nib.
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -58,7 +57,7 @@ class Login_View: UIViewController
         textField_username.iconMarginBottom = 10
         textField_username.iconText = "\u{f003}"
 
-        textField_passowrd.frame = CGRect(origin: CGPoint(x: 312,y :490), size: CGSize(width: 400, height: 60))
+        textField_passowrd.frame = CGRect(origin: CGPoint(x: 312,y :500), size: CGSize(width: 400, height: 60))
         textField_passowrd.lineHeight = 2
         textField_passowrd.lineColor = UIColor.init(white: 1, alpha: 0.5)
         textField_passowrd.selectedLineHeight = 3
@@ -66,7 +65,9 @@ class Login_View: UIViewController
         textField_passowrd.iconMarginBottom = 7
         textField_passowrd.iconColor = UIColor.white
         textField_passowrd.iconText = "\u{f023}"
-    
+        
+        appName.frame = CGRect(origin: CGPoint(x: 473,y :341), size: CGSize(width: 80, height: 54))
+        
         // Ceate user object
         userload = User_Model(ID: "uid", name: "", age: 1, gender: "", email: "", password: "", progress: ProgressArray(useriD: "", emotionIn: Constants.emoIDArray ,StateIn: Constants.stateIDArray, promptIn:  Constants.QuestionStringArray, pictureIn: Constants.pictureArray, urlIn: Constants.urlDArray), cqarray: [QuestionClass]());
     }
@@ -77,6 +78,7 @@ class Login_View: UIViewController
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var LogoLabel: UIImageView!
+    @IBOutlet weak var appName: UILabel!
     
     // UI Component: LOGIN BUTTON
     // Activated: When Pressed

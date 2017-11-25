@@ -1,6 +1,0 @@
-framework module Pods_PET {
-  umbrella header "Pods-PET-umbrella.h"
-
-  export *
-  module * { export * }
-}

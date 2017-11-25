@@ -51,7 +51,8 @@ class GlobalPlay_View: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       // tableView.reloadData()
+       //tableView.reloadData()
+        showPopupError(animated:true, titleIn: "Welcome to Global Playlist", messageIn: "Hit Okay to play shared questions.")
     }
     
     @IBOutlet weak var titleBar: UILabel!
@@ -65,6 +66,28 @@ class GlobalPlay_View: UIViewController {
     
     @IBAction func load(_ sender: UIButton) {
         tableView.reloadData()
+    }
+    
+    // Function: Error Popup handel function
+    // Input:
+    //      1. animated: Bool -> Force popup animation
+    //      2. titleIn: String -> Title of popup message
+    //      3. messageIn: String -> Message of popup
+    // Ouput: N/A
+    func showPopupError(animated: Bool = true, titleIn: String, messageIn: String){
+        // Create the dialog
+        let popup = PopupDialog(title: titleIn, message: messageIn)
+        let buttonOne = DefaultButton(title: "Okay"){self.tableView.reloadData()}
+        
+        // Edit appearance
+        let dialogAppearance = PopupDialogDefaultView.appearance()
+        dialogAppearance.titleFont = UIFont.boldSystemFont(ofSize: 25)
+        dialogAppearance.messageFont = UIFont.systemFont(ofSize: 18)
+        buttonOne.titleFont = UIFont.systemFont(ofSize: 20)
+        buttonOne.titleColor = UIColor.darkGray
+        popup.addButtons([buttonOne])
+        
+        self.present(popup, animated: true, completion: nil)
     }
     
     func LoadPlaylist(){

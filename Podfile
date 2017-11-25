@@ -1,20 +1,19 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, ’11.0’
 
-# AFFECTIVA POD https://cocoapods.org/pods/AffdexSDK-OSX
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
 
 target 'PET' do
 
- use_frameworks!
- inhibit_all_warnings!
-
   # Pods for PET
+
+  pod 'AffdexSDK-iOS'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'    
 
-  pod 'pop'
   pod 'Hero'
   pod 'Charts'
   pod 'FontAwesome.swift'
@@ -24,14 +23,14 @@ target 'PET' do
   pod 'SkyFloatingLabelTextField'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
 
-    target ‘PETTests’ do
-        inherit! :search_paths
-	      use_frameworks!
-    end
+end
 
-    target ‘PETUITests’ do
-        inherit! :search_paths
-	      use_frameworks!
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        if (target.name == "AWSCore") || (target.name == 'AWSKinesis')
+            target.build_configurations.each do |config|
+                config.build_settings['BITCODE_GENERATION_MODE'] = 'bitcode'
+            end
+        end
     end
-
 end

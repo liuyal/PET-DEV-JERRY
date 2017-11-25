@@ -1,4 +1,9 @@
 PODS:
+  - AffdexSDK-iOS (4.0.1):
+    - AWSKinesis
+  - AWSCore (2.6.6)
+  - AWSKinesis (2.6.6):
+    - AWSCore (= 2.6.6)
   - Charts (3.0.4):
     - Charts/Core (= 3.0.4)
   - Charts/Core (3.0.4)
@@ -54,7 +59,6 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - pop (1.0.10)
   - PopupDialog (0.6.1)
   - SkyFloatingLabelTextField (3.3.0)
   - SnapKit (4.0.0)
@@ -62,6 +66,7 @@ PODS:
   - UICircularProgressRing (1.7.4)
 
 DEPENDENCIES:
+  - AffdexSDK-iOS
   - Charts
   - Firebase/Auth
   - Firebase/Core
@@ -69,7 +74,6 @@ DEPENDENCIES:
   - Firebase/Storage
   - FontAwesome.swift
   - Hero
-  - pop
   - PopupDialog (~> 0.6)
   - SkyFloatingLabelTextField
   - SnapKit (~> 4.0.0)
@@ -86,6 +90,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
+  AffdexSDK-iOS: 46f04df6a0259957190f3a592ccd0b33367b3d66
+  AWSCore: 64619e45b47678afab53ca0f9b4fa380ebee6f0b
+  AWSKinesis: b638cef07832fd966fe18d9bb9488dea0ffa70dd
   Charts: 0705898046257443f0afbbc3179f4b67507b6e48
   Firebase: d83d287bdb6b1c78320561482706d1fcfc8ddfc1
   FirebaseAnalytics: 722b53c7b32bfc7806b06e0093a2f5180d4f2c5a
@@ -98,15 +105,14 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   Hero: 18e7cf8af41c04c8532d1430ac174004a9365c87
-  leveldb-library: 44ef425bfde64f5b41daef86b38db2d13edbbee1
+  leveldb-library: 4f9eedf84ab46b4fa3b7893bf30714b2a1a74022
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   PopupDialog: 1bdd1efbfb49eb619a280faa9a3bbaac76f94120
   SkyFloatingLabelTextField: 771be94beca6868a6cea187f70c965ebd81d2f93
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   UICircularProgressRing: 5aca63423d913dc967661370e94e2af0770dd9cd
 
-PODFILE CHECKSUM: 91c45f8f9a80854ed91e147489d8cfe3a3c0fd84
+PODFILE CHECKSUM: bfa9e9e9ae912b7e2bd5331019b9b323d8dc1b73
 
 COCOAPODS: 1.3.1

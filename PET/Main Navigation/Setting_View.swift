@@ -32,10 +32,23 @@ class Setting_View: UIViewController {
         
         ResetButton.layer.borderWidth = 3
         ResetButton.layer.borderColor = UIColor.white.cgColor
+        
+        editA.layer.borderWidth = 3
+        editA.layer.borderColor = UIColor.white.cgColor
+        
+        Stat.layer.borderWidth = 3
+        Stat.layer.borderColor = UIColor.white.cgColor
     }
     
     // LABEL FOR UI ELEMENTS
     @IBOutlet weak var ResetButton: UIButton!
+    @IBOutlet weak var editA: UIButton!
+    @IBOutlet weak var Stat: UIButton!
+    
+    @IBAction func EditAButon(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "segEditAcc", sender: self)
+    }
+    
     @IBAction func ResetProgress(_ sender: UIButton) {
         
         // **** Add POP UP *****
@@ -78,6 +91,10 @@ class Setting_View: UIViewController {
     @IBAction func Main_menuBack(_ sender: UIButton) {
         self.performSegue(withIdentifier: "segSettingBack", sender: self)
     }
+
+    @IBAction func Viewstats(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "segStat", sender: self)
+    }
     
     // Function: overrider prepare() to allow for sending of variables to other view controllers
     // Input:
@@ -87,6 +104,12 @@ class Setting_View: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let send_user = user
         if let destinationViewController = segue.destination as? Main_menu {
+            destinationViewController.user = send_user
+        }
+        else if let destinationViewController = segue.destination as? EditAccount_View {
+            destinationViewController.user = send_user
+        }
+        else if let destinationViewController = segue.destination as? Stat_View {
             destinationViewController.user = send_user
         }
     }

@@ -170,6 +170,8 @@ class GlobalGameplay_View: UIViewController {
         }
     }
     
+    
+    
     // Function: Popup handel function for end of game
     // Input:
     //      1. animated: Bool -> Force popup animation

@@ -135,7 +135,6 @@ class Creat_account: UIViewController{
                         Infocheck = false}}
                 else {print("Invaild Age"); showPopupError(animated: true,titleIn: "Invaild Age", messageIn: "Please select vaild age");
                     Infocheck = false}
-                // *** Print to screen to be added ***
             }
         }
         
