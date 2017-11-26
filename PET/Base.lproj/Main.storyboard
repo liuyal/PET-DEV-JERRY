@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -658,7 +658,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vsT-1u-InW">
-                                                    <rect key="frame" x="8" y="12" width="125" height="95"/>
+                                                    <rect key="frame" x="15" y="15" width="125" height="89"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="125" id="ZeH-fv-RJw"/>
                                                     </constraints>
@@ -669,7 +669,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mok-lr-Gy5">
-                                                    <rect key="frame" x="182" y="25" width="675" height="70"/>
+                                                    <rect key="frame" x="189" y="28" width="675" height="64"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="675" id="E4l-eK-QS1"/>
                                                     </constraints>
@@ -708,7 +708,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ak0-XK-BcK">
-                                <rect key="frame" x="924" y="4" width="80" height="80"/>
+                                <rect key="frame" x="924" y="20" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="65"/>
                                 <state key="normal" title="+">
@@ -1852,14 +1852,27 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="N3I-Qd-tvk">
+                                <rect key="frame" x="776" y="651" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOK-b9-k59">
+                                <rect key="frame" x="804" y="651" width="100" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.40781933069999998" green="0.1700959175" blue="0.25694515600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="Qprompt" destination="7Nl-aU-fj8" id="2zm-Cw-dcO"/>
+                        <outlet property="actIndi" destination="N3I-Qd-tvk" id="Gbw-Fj-nyG"/>
                         <outlet property="addQbutton" destination="mNw-Nr-nOw" id="mU0-yZ-4Cq"/>
                         <outlet property="addimagebutton" destination="d3q-bg-5no" id="JS8-nw-sQX"/>
                         <outlet property="imageView" destination="w1e-sO-9tn" id="dpT-jD-d82"/>
+                        <outlet property="saving" destination="SOK-b9-k59" id="IZ8-fg-ZsO"/>
                         <outlet property="titleBar" destination="zWi-7E-4Dj" id="Pho-08-rrf"/>
                         <outlet property="uploadMessage" destination="Dw6-qG-cWB" id="lhG-K8-QKo"/>
                         <segue destination="l77-q7-HrI" kind="show" identifier="segAddQBack" animates="NO" id="Ul3-Jp-suW"/>
@@ -2217,14 +2230,27 @@
                                     <action selector="addImagebutton:" destination="WGb-fd-ZAZ" eventType="touchUpInside" id="Bak-d5-PYR"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="RX9-qk-UB8">
+                                <rect key="frame" x="789" y="661" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hb-Mx-dnm">
+                                <rect key="frame" x="817" y="661" width="100" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.40781933069999998" green="0.1700959175" blue="0.25694515600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="Qprompt" destination="MEo-Xe-uyM" id="zjE-3M-P0i"/>
+                        <outlet property="actIndi" destination="RX9-qk-UB8" id="jxa-S7-NxU"/>
                         <outlet property="addimagebutton" destination="6kq-JR-zuh" id="mKP-FZ-7d0"/>
                         <outlet property="imageView" destination="Vjr-Xl-6Qm" id="Adf-ix-jw6"/>
                         <outlet property="saveQbutton" destination="6sa-5N-e0j" id="Q6A-lH-Pot"/>
+                        <outlet property="saving" destination="2hb-Mx-dnm" id="Si0-SB-dAG"/>
                         <outlet property="titleBar" destination="8aP-vO-fRV" id="HaF-ti-dSx"/>
                         <segue destination="l77-q7-HrI" kind="show" identifier="segEditQback" animates="NO" id="9ul-Vz-twN"/>
                     </connections>
@@ -2268,7 +2294,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A0w-xu-Ajm">
-                                                    <rect key="frame" x="8" y="12" width="125" height="95"/>
+                                                    <rect key="frame" x="15" y="15" width="125" height="89"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="125" id="LEK-Gu-MUR"/>
                                                     </constraints>
@@ -2279,7 +2305,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivj-Xc-2Au">
-                                                    <rect key="frame" x="182" y="25" width="675" height="70"/>
+                                                    <rect key="frame" x="189" y="28" width="675" height="64"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="675" id="2LY-oB-feD"/>
                                                     </constraints>
@@ -2733,8 +2759,8 @@
         <segue reference="Jez-fd-JcF"/>
         <segue reference="j3t-HD-cH9"/>
         <segue reference="uyH-dx-EKl"/>
-        <segue reference="9ul-Vz-twN"/>
-        <segue reference="0XY-Lq-Qou"/>
+        <segue reference="Ul3-Jp-suW"/>
+        <segue reference="EUl-sp-Vn0"/>
         <segue reference="LrV-CA-v2d"/>
     </inferredMetricsTieBreakers>
 </document>

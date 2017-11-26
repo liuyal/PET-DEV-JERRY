@@ -362,7 +362,7 @@
 				TargetAttributes = {
 					79B795BB1F9798A500A6650F = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = LZDX64BEDK;
+						DevelopmentTeam = YN7632NGXP;
 						ProvisioningStyle = Automatic;
 					};
 					79B795CF1F9798A500A6650F = {
@@ -702,7 +702,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LZDX64BEDK;
+				DEVELOPMENT_TEAM = YN7632NGXP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/**",
@@ -727,7 +727,7 @@
 					"\"${PODS_ROOT}/FirebaseStorage/Frameworks\"",
 				);
 				INFOPLIST_FILE = PET/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Teamx.PET;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -744,7 +744,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LZDX64BEDK;
+				DEVELOPMENT_TEAM = YN7632NGXP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/**",
@@ -769,7 +769,7 @@
 					"\"${PODS_ROOT}/FirebaseStorage/Frameworks\"",
 				);
 				INFOPLIST_FILE = PET/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Teamx.PET;
 				PRODUCT_NAME = "$(TARGET_NAME)";

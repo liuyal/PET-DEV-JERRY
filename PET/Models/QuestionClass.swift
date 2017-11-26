@@ -79,7 +79,6 @@ class QuestionClass {
         else { self.levelID = levelID}
         
         if questionID < 0{ self.questionID = 0 }
-        else if questionID >= Q_PER_TIER { self.questionID = Q_PER_TIER }
         else { self.questionID = questionID }
       
         self.emotion = emotion

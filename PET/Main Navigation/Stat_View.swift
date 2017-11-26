@@ -26,7 +26,7 @@ class Stat_View: UIViewController {
         ref = Database.database().reference()
         let emotionIDA: [emotionID] = [.happy, .sad, .scared, .angry, .surprised, .inlove, .confused, .shy, .excited, .sick, .confident, .embarrassed]
         
-        let emotionIDS = ["happy", "sad", "scared", "angry", "surprised", "inlove", "confused", "shy", "excited", "sick", "confident", "embarrassed"]
+        //let emotionIDS = ["happy", "sad", "scared", "angry", "surprised", "inlove", "confused", "shy", "excited", "sick", "confident", "embarrassed"]
         
         var ErrorStats = Array(repeating: 0, count: DeckSize)
         

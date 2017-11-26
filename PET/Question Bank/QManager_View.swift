@@ -46,10 +46,10 @@ class QManager_View: UIViewController {
         tableView.dataSource = self
         
         // Update UI Elements
-        titleBar.frame = CGRect(origin: CGPoint(x: 0,y :25), size: CGSize(width: 1024, height: 80))
-        backButton.frame = CGRect(origin: CGPoint(x: 0,y :25), size: CGSize(width: 80, height: 80))
-        addButton.frame = CGRect(origin: CGPoint(x: 844,y :10), size: CGSize(width: 80, height: 80))
-        tableView.frame = CGRect(origin: CGPoint(x: 25,y :115), size: CGSize(width: 975, height: 630))
+        titleBar.frame = CGRect(origin: CGPoint(x: 20,y :25), size: CGSize(width: 975, height: 80))
+        backButton.frame = CGRect(origin: CGPoint(x: 20,y :25), size: CGSize(width: 80, height: 80))
+        addButton.frame = CGRect(origin: CGPoint(x: 924,y :25), size: CGSize(width: 80, height: 80))
+        tableView.frame = CGRect(origin: CGPoint(x: 20,y :115), size: CGSize(width: 975, height: 630))
         
         self.tableView!.separatorStyle = .singleLine
         questArray = (user?.CustomQArray)!

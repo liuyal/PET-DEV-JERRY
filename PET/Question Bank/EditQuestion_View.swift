@@ -82,6 +82,14 @@ class EditQuestion_View: UIViewController {
         
         addimagebutton.backgroundColor = UIColor.clear
         addimagebutton.frame = CGRect(origin: CGPoint(x: 25,y :120), size: CGSize(width: 100, height: 100))
+        
+        actIndi.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
+        actIndi.hidesWhenStopped = true
+        actIndi.transform = CGAffineTransform(scaleX: 2.0, y: 2.0);
+        actIndi.frame = CGRect(origin: CGPoint(x: 776,y :640), size: CGSize(width: 20, height: 20))
+        
+        saving.frame = CGRect(origin: CGPoint(x: 815,y :645), size: CGSize(width: 100, height: 20))
+        saving.text = ""
     }
 
     // UI Element Lables
@@ -91,6 +99,9 @@ class EditQuestion_View: UIViewController {
     @IBOutlet weak var addimagebutton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
 
+    @IBOutlet weak var actIndi: UIActivityIndicatorView!
+    
+    @IBOutlet weak var saving: UILabel!
     // UI Component: Add image for Custom Question BUTTON
     // Activated: When Pressed
     // Action: Open prompt for adding images
@@ -133,9 +144,12 @@ class EditQuestion_View: UIViewController {
         self.user?.CustomQArray[index!].errCnt = 0
         self.user?.CustomQArray[index!].questionState = .initial
         
-        self.updateDB(obj: (user?.CustomQArray[index!])!)
+        self.actIndi.startAnimating()
+        self.saving.text = "Saving..."
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
         print("Saved Question")
-        self.performSegue(withIdentifier: "segEditQback", sender: self)
+        self.updateDB(obj: (user?.CustomQArray[index!])!)
     }
     
     // UI Component: Return to question manager
@@ -175,16 +189,42 @@ class EditQuestion_View: UIViewController {
             let MetaURL = metadata.downloadURL()!.absoluteString
             // Update table to database
             self.ref.child("ROOT").child(id!).child("CustomQuestions").child(Qname).child("URL").setValue(MetaURL)
-            print(MetaURL)
+            //Set State and errorcount of qusetion (Load from local user object, Store into DB)
+            self.ref.child("ROOT").child(id!).child("CustomQuestions").child(Qname).child("State").setValue(0)
+            self.ref.child("ROOT").child(id!).child("CustomQuestions").child(Qname).child("errCnt").setValue(0)
+            self.ref.child("ROOT").child(id!).child("CustomQuestions").child(Qname).child("prompt").setValue(message)
+            self.ref.child("ROOT").child(id!).child("CustomQuestions").child(Qname).child("emotion").setValue(emotionIn)
+            // print(MetaURL)
+        
+            self.saving.text = "Done!"
+            self.actIndi.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+            self.showPopupEnd(animated: true, titleIn: "Question Edited", messageIn: "Hit Okay to Return")
+        }
+    }
+    // Function: Error Popup handel function
+    // Input:
+    //      1. animated: Bool -> Force popup animation
+    //      2. titleIn: String -> Title of popup message
+    //      3. messageIn: String -> Message of popup
+    // Ouput: N/A
+    func showPopupEnd(animated: Bool = true, titleIn: String, messageIn: String){
+        // Create the dialog
+        let popup = PopupDialog(title: titleIn, message: messageIn)
+        let buttonOne = DefaultButton(title: "Okay"){
+            self.performSegue(withIdentifier: "segEditQback", sender: self)
         }
         
-        //Set State and errorcount of qusetion (Load from local user object, Store into DB)
-        self.ref.child("ROOT").child(id!).child("CustomQuestions").child(Qname).child("State").setValue(0)
-        self.ref.child("ROOT").child(id!).child("CustomQuestions").child(Qname).child("errCnt").setValue(0)
-        self.ref.child("ROOT").child(id!).child("CustomQuestions").child(Qname).child("prompt").setValue(message)
-        self.ref.child("ROOT").child(id!).child("CustomQuestions").child(Qname).child("emotion").setValue(emotionIn)
+        // Edit appearance
+        let dialogAppearance = PopupDialogDefaultView.appearance()
+        dialogAppearance.titleFont = UIFont.boldSystemFont(ofSize: 25)
+        dialogAppearance.messageFont = UIFont.systemFont(ofSize: 18)
+        buttonOne.titleFont = UIFont.systemFont(ofSize: 20)
+        buttonOne.titleColor = UIColor.darkGray
+        popup.addButtons([buttonOne])
+        
+        self.present(popup, animated: true, completion: nil)
     }
-    
     // Function: Error Popup handel function
     // Input:
     //      1. animated: Bool -> Force popup animation
