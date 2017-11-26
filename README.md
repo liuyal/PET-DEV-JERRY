@@ -65,3 +65,7 @@ How to download the repository to your local computer:
 
 #### Jerry Liu
 > liuyal@sfu.ca 
+
+## Reference
+
+[1] A. Society, “Facts and Statistics,” Autism Society, 2016. [Online]. Available: http://www.autism-society.org/what-is/facts-and-statistics/. [Accessed: 24-Sep-2017]. 
