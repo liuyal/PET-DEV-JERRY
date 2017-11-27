@@ -46,7 +46,7 @@ How to download the repository to your local computer:
 3. Press Enter. The project files will be downloaded to your current directory.
 4. Install cocoa pods on terminal
 5. Navigate to the project directory in terminal
-6. Run the ```pod install``` command. This will install the SDKs specified in the Podfile, along with any dependencies they may have.
+6. Run the ```pod install``` command. This will install the SDKs specified in the Podfile, along with any dependencies.
 7. Open project via ```PET.xcworkspace```
 
 ## Team
