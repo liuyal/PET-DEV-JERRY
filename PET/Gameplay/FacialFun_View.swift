@@ -13,6 +13,7 @@ import FirebaseDatabase
 import PopupDialog
 import AVFoundation
 import Affdex
+import UICircularProgressRing
 
 // Class: FacialFun_View
 // Members:
@@ -29,11 +30,12 @@ class FacialFun_View: UIViewController, AFDXDetectorDelegate {
     var detector : AFDXDetector? = nil
     var index: Int = 0
     let ansImages = [#imageLiteral(resourceName: "1"), #imageLiteral(resourceName: "2"), #imageLiteral(resourceName: "3")]
-    
-    var detectArray: [CGFloat] = Array(repeating: CGFloat(0.0), count: 4)
+    var detectArray: [CGFloat] = Array(repeating: CGFloat(0.0), count: 8)
+    let RestArray: [CGFloat] = Array(repeating: CGFloat(0.0), count: 8)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video as the media type parameter
         let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: .front)
         
@@ -46,20 +48,22 @@ class FacialFun_View: UIViewController, AFDXDetectorDelegate {
         detector?.anger = true
         detector?.smile = true
         detector!.start()
-        
-        perc.text = String(0) + "%"
-        questImage.image = ansImages[index]
-    }
 
+        questImage.image = ansImages[index]
+        Cbar.value = 0.0
+        Cbar.font = UIFont.systemFont(ofSize: 25)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        showPopupCorrect(animated:  true,titleIn: "Welcome To Facial Fun", messageIn: "Make the image shown by the picture")
+        showPopupCorrect(animated:  true,titleIn: "Welcome To Facial Fun", messageIn: "Make the expression shown by the picture")
     }
     
     @IBOutlet weak var questImage: UIImageView!
     @IBOutlet weak var imageout: UIView!
-    @IBOutlet weak var perc: UILabel!
     @IBOutlet weak var imageDis: UIImageView!
+
+    @IBOutlet weak var Cbar: UICircularProgressRingView!
     
     func detectorDidStartDetectingFace(face : AFDXFace) {
         // handle new face
@@ -81,39 +85,38 @@ class FacialFun_View: UIViewController, AFDXDetectorDelegate {
                 let emo2: AFDXEmotions = (face as AnyObject).emotions
                 let emo: AFDXExpressions = (face as AnyObject).expressions
                 var Score = CGFloat(0.0)
-                
+
                 if index == 0{
                     Score = emo2.joy
                     detectArray.append(Score)
                     detectArray.remove(at: 0)
-                    
+
                     let sum = detectArray.reduce(0, +)
-                    let avgScore = Int(sum)/Int(detectArray.count)
-                    perc.text = String(describing: Int(avgScore)) + "%"
+                    let avgScore = sum/CGFloat(detectArray.count)
+                    self.Cbar.value = avgScore
                     
-                    if avgScore >= 80{
-                        index += 1
+                    if avgScore >= 95{
+                        index = 1
                         questImage.image = ansImages[index]
+                        detectArray = RestArray
                         showPopupCorrect(animated:  true,titleIn: "Correct", messageIn: "")
                     }
-                  
                 }
                 else if index == 1{
-                    
                     Score = emo2.anger
                     detectArray.append(Score)
                     detectArray.remove(at: 0)
                     
                     let sum = detectArray.reduce(0, +)
-                    let avgScore = Int(sum)/Int(detectArray.count)
-                    perc.text = String(describing: Int(avgScore)) + "%"
+                    let avgScore = sum/CGFloat(detectArray.count)
+                    self.Cbar.value = avgScore
                     
-                    if avgScore >= 80{
-                        index += 1
+                    if avgScore >= 90{
+                        index = 2
                         questImage.image = ansImages[index]
-                         showPopupCorrect(animated:  true,titleIn: "Correct", messageIn: "")
+                        detectArray = RestArray
+                        showPopupCorrect(animated:  true,titleIn: "Correct", messageIn: "")
                     }
-                    
                 }
                 else{
                     Score = emo.browFurrow
@@ -121,12 +124,11 @@ class FacialFun_View: UIViewController, AFDXDetectorDelegate {
                     detectArray.remove(at: 0)
                     
                     let sum = detectArray.reduce(0, +)
-                    let avgScore = Int(sum)/Int(detectArray.count)
-                    perc.text = String(describing: Int(avgScore)) + "%"
-                   
-                     if avgScore >= 80{
+                    let avgScore = sum/CGFloat(detectArray.count)
+                    self.Cbar.value = avgScore
                     
-                    showPopupEND(animated: true,titleIn: "Congratulation!", messageIn: "All Questions Complete. Thanks for Playing")
+                    if avgScore >= 90{
+                        showPopupEND(animated: true,titleIn: "Congratulation!", messageIn: "All Questions Complete. Thanks for Playing")
                     }
                 }
                 print(detectArray)
@@ -134,8 +136,9 @@ class FacialFun_View: UIViewController, AFDXDetectorDelegate {
         }
         else {
             // handle unprocessed image in this block of code
+            //detectArray = RestArray
             imageDis.image = forImage
-           // imageout.backgroundColor = UIColor(patternImage: forImage)
+            // imageout.backgroundColor = UIColor(patternImage: forImage)
         }
     }
     // Function: Popup handel function for Correct Answer
@@ -180,7 +183,6 @@ class FacialFun_View: UIViewController, AFDXDetectorDelegate {
         let buttonThree = DefaultButton(title: "Okay"){
             self.detector!.stop()
             self.performSegue(withIdentifier: "segFFBack", sender: self)
-            
         }
         
         // Edit appearance

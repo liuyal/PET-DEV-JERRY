@@ -1,8 +1,8 @@
-﻿# Personal Emotion Traininer (P.E.T.)
+# Personal Emotion Traininer (P.E.T.)
 
 
 <p align="center">
-<img src="./PET/Icon.gif" width="300"></img>
+<img src=".//PET/Assets.xcassets/AppIcon.appiconset/Icon.gif" width="300"></img>
 </p>
 
 
@@ -38,16 +38,9 @@ Autism is a neuro-developmental disorder which impairs a person’s ability for 
 
 [QA Document](https://drive.google.com/file/d/0B1jxNFhuwWIIdGZyS0YzWW5TRVE/view)
 
-## Project Usage Instructions
+## Project Demo Instructions
 
-How to download the repository to your local computer:
-1. Open Terminal (or cmd) and navigate to the directory you would like to put the project in
-2. Type the following command: ```git clone https://github.com/liuyal/PET-DEV-JERRY.git```
-3. Press Enter. The project files will be downloaded to your current directory.
-4. Install cocoa pods on terminal
-5. Navigate to the project directory in terminal
-6. Run the ```pod install``` command. This will install the SDKs specified in the Podfile, along with any dependencies they may have.
-7. Open project via ```PET.xcworkspace```
+
 
 ## Team
 
@@ -65,7 +58,3 @@ How to download the repository to your local computer:
 
 #### Jerry Liu
 > liuyal@sfu.ca 
-
-## Reference
-
-[1] A. Society, “Facts and Statistics,” Autism Society, 2016. [Online]. Available: http://www.autism-society.org/what-is/facts-and-statistics/. [Accessed: 24-Sep-2017]. 

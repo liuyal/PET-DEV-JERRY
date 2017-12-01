@@ -98,10 +98,9 @@ class EditQuestion_View: UIViewController {
     @IBOutlet weak var saveQbutton: UIButton!
     @IBOutlet weak var addimagebutton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
-
     @IBOutlet weak var actIndi: UIActivityIndicatorView!
-    
     @IBOutlet weak var saving: UILabel!
+    
     // UI Component: Add image for Custom Question BUTTON
     // Activated: When Pressed
     // Action: Open prompt for adding images

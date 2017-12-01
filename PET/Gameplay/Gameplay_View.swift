@@ -59,10 +59,10 @@ class Gameplay_View: UIViewController {
         QuestionImage.layer.borderColor = UIColor.white.cgColor
         
         // UI element Init()
-        skipButton.frame = CGRect(origin: CGPoint(x: 895,y :20), size: CGSize(width: 100, height: 70))
-        titbar.frame = CGRect(origin: CGPoint(x: 20,y :20), size: CGSize(width: 975, height: 70))
+        skipButton.frame = CGRect(origin: CGPoint(x: 900,y :20), size: CGSize(width: 125, height: 70))
+        titbar.frame = CGRect(origin: CGPoint(x: 0,y :20), size: CGSize(width: 1024, height: 70))
         titbar.text = user?.progress.questionArray[index!].imageFileRef
-        backButton.frame = CGRect(origin: CGPoint(x: 20,y :20), size: CGSize(width: 70, height: 70))
+        backButton.frame = CGRect(origin: CGPoint(x: 0,y :20), size: CGSize(width: 80, height: 70))
         
         // Create empty Deck of Emotion Cards for dummy answers
         var cardsArray = [Cards]()

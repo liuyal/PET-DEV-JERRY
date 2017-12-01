@@ -25,9 +25,9 @@ class GlobalGameplay_View: UIViewController {
         QuestionImage.layer.borderWidth = 5
         QuestionImage.layer.borderColor = UIColor.white.cgColor
         
-        titbar.frame = CGRect(origin: CGPoint(x: 20,y :20), size: CGSize(width: 975, height: 70))
+        titbar.frame = CGRect(origin: CGPoint(x: 0,y :20), size: CGSize(width: 1024, height: 70))
         titbar.text = self.playlist[index!].imageFileRef
-        backButton.frame = CGRect(origin: CGPoint(x: 20,y :20), size: CGSize(width: 70, height: 70))
+        backButton.frame = CGRect(origin: CGPoint(x: 0,y :20), size: CGSize(width: 70, height: 70))
         
         // Create empty Deck of Emotion Cards for dummy answers
         var cardsArray = [Cards]()
@@ -170,8 +170,6 @@ class GlobalGameplay_View: UIViewController {
         }
     }
     
-    
-    
     // Function: Popup handel function for end of game
     // Input:
     //      1. animated: Bool -> Force popup animation
@@ -301,8 +299,10 @@ class GlobalGameplay_View: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let send_user = user
+        let send_list = playlist
         if let destinationViewController = segue.destination as? GlobalPlay_View {
             destinationViewController.user = send_user
+            destinationViewController.globalPlaylist = send_list!
         }
     }
 }

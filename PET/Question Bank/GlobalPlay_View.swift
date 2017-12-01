@@ -39,22 +39,26 @@ class GlobalPlay_View: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        titleBar.frame = CGRect(origin: CGPoint(x: 25,y :20), size: CGSize(width: 975, height: 80))
-        backButton.frame = CGRect(origin: CGPoint(x: 25,y :20), size: CGSize(width: 80, height: 80))
+        titleBar.frame = CGRect(origin: CGPoint(x: 0,y :20), size: CGSize(width: 1024, height: 80))
+        backButton.frame = CGRect(origin: CGPoint(x: 0,y :20), size: CGSize(width: 80, height: 80))
         tableView.frame = CGRect(origin: CGPoint(x: 25,y :115), size: CGSize(width: 975, height: 630))
-        RefreshButton.frame = CGRect(origin: CGPoint(x: 933,y :35), size: CGSize(width: 50, height: 50))
+        RefreshButton.frame = CGRect(origin: CGPoint(x: 954,y :35), size: CGSize(width: 50, height: 50))
         
         self.tableView!.separatorStyle = .singleLine
-        self.LoadPlaylist()
-       // self.LoadCreatorlist()
+        
+        if globalPlaylist.count == 0{
+            self.LoadPlaylist()
+            // self.LoadCreatorlist()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       //tableView.reloadData()
-        showPopupError(animated:true, titleIn: "Welcome to Global Playlist", messageIn: "Hit Okay to play shared questions.")
+        //tableView.reloadData()
+        if globalPlaylist.count == 0{
+            showPopupError(animated:true, titleIn: "Welcome to Global Playlist", messageIn: "Hit Okay to play shared questions.")
+        }
     }
-    
     @IBOutlet weak var titleBar: UILabel!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -144,41 +148,41 @@ class GlobalPlay_View: UIViewController {
     }
     
     /*
-    func LoadCreatorlist(){
-        self.ref.child("ROOT").observeSingleEvent(of: .value, with: { (snapshot) in
-            let NSshotSize = snapshot.childrenCount
-            let DBsize = Int(NSshotSize)
-            var groupNames = [String]()
-            for group in snapshot.children {
-                groupNames.append((group as AnyObject).key)
-            }
-            print(groupNames)
-            for i in 0..<DBsize{
-                self.ref.child("ROOT").child(groupNames[i]).child("CustomQuestions").observeSingleEvent(of: .value, with: { (snapshot) in
-                    let NSshotSize2 = snapshot.childrenCount
-                    let DBsize2 = Int(NSshotSize2)
-                    var groupNames2 = [String]()
-                    for group2 in snapshot.children {
-                        groupNames2.append((group2 as AnyObject).key)
-                    }
-                    print(groupNames2)
-                    
-                    self.ref.child("ROOT").child(groupNames[i]).observeSingleEvent(of: .value, with: { (snapshot) in
-                        let NSName = snapshot.childSnapshot(forPath: "Name").value as? NSString!
-                        let SName = NSName as? String ?? ""
-                        for j in 0..<DBsize2{
-                            self.ref.child("ROOT").child(groupNames[i]).child("CustomQuestions").child(groupNames2[j]).observeSingleEvent(of: .value, with: { (snapshot) in
-                                
-                                self.creatorList.append(SName)
-                                print(SName)
-                            })
-                        }
-                    })
-                })
-            }
-        })
-    }*/
- 
+     func LoadCreatorlist(){
+     self.ref.child("ROOT").observeSingleEvent(of: .value, with: { (snapshot) in
+     let NSshotSize = snapshot.childrenCount
+     let DBsize = Int(NSshotSize)
+     var groupNames = [String]()
+     for group in snapshot.children {
+     groupNames.append((group as AnyObject).key)
+     }
+     print(groupNames)
+     for i in 0..<DBsize{
+     self.ref.child("ROOT").child(groupNames[i]).child("CustomQuestions").observeSingleEvent(of: .value, with: { (snapshot) in
+     let NSshotSize2 = snapshot.childrenCount
+     let DBsize2 = Int(NSshotSize2)
+     var groupNames2 = [String]()
+     for group2 in snapshot.children {
+     groupNames2.append((group2 as AnyObject).key)
+     }
+     print(groupNames2)
+     
+     self.ref.child("ROOT").child(groupNames[i]).observeSingleEvent(of: .value, with: { (snapshot) in
+     let NSName = snapshot.childSnapshot(forPath: "Name").value as? NSString!
+     let SName = NSName as? String ?? ""
+     for j in 0..<DBsize2{
+     self.ref.child("ROOT").child(groupNames[i]).child("CustomQuestions").child(groupNames2[j]).observeSingleEvent(of: .value, with: { (snapshot) in
+     
+     self.creatorList.append(SName)
+     print(SName)
+     })
+     }
+     })
+     })
+     }
+     })
+     }*/
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let send_user = user
         let send_playlist = globalPlaylist
@@ -186,11 +190,11 @@ class GlobalPlay_View: UIViewController {
         if let destinationViewController = segue.destination as? LevelSelect_View {
             destinationViewController.user = send_user
         }
-                else if let destinationViewController = segue.destination as? GlobalGameplay_View {
-                    destinationViewController.user = send_user
-                    destinationViewController.playlist = send_playlist
-                    destinationViewController.index = send_index
-            }
+        else if let destinationViewController = segue.destination as? GlobalGameplay_View {
+            destinationViewController.user = send_user
+            destinationViewController.playlist = send_playlist
+            destinationViewController.index = send_index
+        }
     }
 }
 

@@ -718,7 +718,6 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/UICircularProgressRing\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/leveldb-library\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/nanopb\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/pop\"",
 					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
 					"\"${PODS_ROOT}/FirebaseAuth/Frameworks\"",
 					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
@@ -727,7 +726,7 @@
 					"\"${PODS_ROOT}/FirebaseStorage/Frameworks\"",
 				);
 				INFOPLIST_FILE = PET/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Teamx.PET;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -760,7 +759,6 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/UICircularProgressRing\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/leveldb-library\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/nanopb\"",
-					"\"$PODS_CONFIGURATION_BUILD_DIR/pop\"",
 					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
 					"\"${PODS_ROOT}/FirebaseAuth/Frameworks\"",
 					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
@@ -769,7 +767,7 @@
 					"\"${PODS_ROOT}/FirebaseStorage/Frameworks\"",
 				);
 				INFOPLIST_FILE = PET/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Teamx.PET;
 				PRODUCT_NAME = "$(TARGET_NAME)";

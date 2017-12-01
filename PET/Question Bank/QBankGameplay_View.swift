@@ -33,9 +33,9 @@ class QBankGameplay_View: UIViewController {
         QuestionImage.layer.borderWidth = 5
         QuestionImage.layer.borderColor = UIColor.white.cgColor
         
-        titbar.frame = CGRect(origin: CGPoint(x: 20,y :20), size: CGSize(width: 975, height: 70))
+        titbar.frame = CGRect(origin: CGPoint(x: 0,y :20), size: CGSize(width: 1024, height: 70))
         titbar.text = user?.CustomQArray[index!].imageFileRef
-        backButton.frame = CGRect(origin: CGPoint(x: 20,y :20), size: CGSize(width: 70, height: 70))
+        backButton.frame = CGRect(origin: CGPoint(x: 0,y :20), size: CGSize(width: 80, height: 70))
         
         // Create empty Deck of Emotion Cards for dummy answers
         var cardsArray = [Cards]()
