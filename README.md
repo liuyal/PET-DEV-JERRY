@@ -30,17 +30,28 @@ Autism is a neuro-developmental disorder which impairs a person’s ability for 
 
 ## Documentation
 
-[Project Plan](https://drive.google.com/open?id=0B1jxNFhuwWIILUdFb3dSOGhjdEU)
+[Project Plan](https://github.com/liuyal/PET-DEV-JERRY/blob/master/Documents/Assignement%201/Group-10-ProjectPlan.pdf)
 
-[Requirements Document](https://drive.google.com/file/d/0B1jxNFhuwWIIQWZDbDNqdXA3OWM/view)
+[Requirements Document](https://github.com/liuyal/PET-DEV-JERRY/blob/master/Documents/Assignement%205/Group-10-Requirements.pdf)
 
-[Design Document](https://drive.google.com/file/d/0B1jxNFhuwWIIal93MlNiMW5mcTQ/view)
+[Design Document](https://github.com/liuyal/PET-DEV-JERRY/blob/master/Documents/Assignement%205/Group-10-Design.pdf)
 
-[QA Document](https://drive.google.com/file/d/0B1jxNFhuwWIIdGZyS0YzWW5TRVE/view)
+[QA Document](https://github.com/liuyal/PET-DEV-JERRY/blob/master/Documents/Assignement%205/Group-10-QA.pdf)
+
+[Feature Fulfillment](https://github.com/liuyal/PET-DEV-JERRY/blob/master/Documents/Assignement%205/Group-10-Features_FulfllmentReq.pdf)
+
+[Getting Started Tutorial](https://github.com/liuyal/PET-DEV-JERRY/blob/master/Documents/Assignement%205/Group-10-Tutorial.pdf)
 
 ## Project Demo Instructions
 
-
+How to download the repository to your local computer:
+1. Open Terminal (or cmd) and navigate to the directory you would like to put the project in
+2. Type the following command: ```git clone https://github.com/liuyal/PET-DEV-JERRY.git```
+3. Press Enter. The project files will be downloaded to your current directory.
+4. Install cocoa pods on terminal
+5. Navigate to the project directory in terminal
+6. Run the ```pod install``` command. This will install the SDKs specified in the Podfile, along with any dependencies they may have.
+7. Open project via ```PET.xcworkspace```
 
 ## Team
 
