@@ -2,7 +2,7 @@
 
 
 <p align="center">
-<img src=".//PET/Assets.xcassets/AppIcon.appiconset/Icon.gif" width="300"></img>
+<img src=".//Documents/Icon.gif" width="300"></img>
 </p>
 
 
