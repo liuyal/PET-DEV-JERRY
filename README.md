@@ -30,17 +30,17 @@ Autism is a neuro-developmental disorder which impairs a person’s ability for 
 
 ## Documentation
 
-[Project Plan](https://github.com/liuyal/PET-DEV-JERRY/blob/master/Documents/Assignement%201/Group-10-ProjectPlan.pdf)
+[Project Plan](./Documents/Assignement1/Group-10-ProjectPlan.pdf)
 
-[Requirements Document](https://github.com/liuyal/PET-DEV-JERRY/blob/master/Documents/Assignement%205/Group-10-Requirements.pdf)
+[Requirements Document](./Documents/Assignement5/Group-10-Requirements.pdf)
 
-[Design Document](https://github.com/liuyal/PET-DEV-JERRY/blob/master/Documents/Assignement%205/Group-10-Design.pdf)
+[Design Document](./Documents/Assignement5/Group-10-Design.pdf)
 
-[QA Document](https://github.com/liuyal/PET-DEV-JERRY/blob/master/Documents/Assignement%205/Group-10-QA.pdf)
+[QA Document](./Documents/Assignement5/Group-10-QA.pdf)
 
-[Feature Fulfillment](https://github.com/liuyal/PET-DEV-JERRY/blob/master/Documents/Assignement%205/Group-10-Features_FulfllmentReq.pdf)
+[Feature Fulfillment](./Documents/Assignement5/Group-10-Features_FulfllmentReq.pdf)
 
-[Getting Started Tutorial](https://github.com/liuyal/PET-DEV-JERRY/blob/master/Documents/Assignement%205/Group-10-Tutorial.pdf)
+[Getting Started Tutorial](./Documents/Assignement5//Group-10-Tutorial.pdf)
 
 ## Project Demo Instructions
 
