@@ -19,7 +19,7 @@ Autism is a neuro-developmental disorder which impairs a person’s ability for 
 
 ##### Fun and engaging Levels that are both informative and help with emotion cognition development. 
 ##### Customizable questions with images of family and friends.
-##### Special emotion matching throught the camera.
+##### Special emotion matching through the device camera.
 
 ## Technical Features
 
